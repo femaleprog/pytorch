@@ -1,3 +1,8 @@
+# prediction : Manually
+# gradients computation : Autograd
+# loss computation : manually
+# Parameter updates : manually 
+
 import torch
 
 # f = w*x 
@@ -35,7 +40,7 @@ for epoch in range(n_iters):
     
     #update weights
     with torch.no_grad():
-        w -= learning_rate*w.grad 
+        w -= learning_rate*w.grad # w = w - alpha*dl/dw
     
     w.grad.zero_() # to empty w.grad
     if epoch%2 == 0:

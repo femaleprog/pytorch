@@ -1,3 +1,8 @@
+# prediction : Manually
+# gradients computation : Autograd
+# loss computation : manually
+# Parameter updates : manually 
+
 import numpy as np 
 
 # f = w*x 

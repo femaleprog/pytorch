@@ -26,7 +26,16 @@ n_samples, n_features = X.shape # 4, 1
 
 input_size = n_features
 output_size = n_features
-model = nn.Linear( input_size, output_size)
+#model = nn.Linear( input_size, output_size)
+
+class LinearRegression(nn.Module):
+    def __init__(self, input_dim, output_dim):
+        super(LinearRegression, self).__init__() # calling the super constructor
+        self.lin = nn.Linear(input_dim, output_dim)
+    def forward(self, x):
+        return self.lin(x)
+
+model = LinearRegression(input_size, output_size)
 
 print(f'Prediction before training : f(5) = {model(X_test).item() :.3f}')
 learning_rate = 0.01
